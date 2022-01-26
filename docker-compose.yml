@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  dev:
+    build: .
+    shm_size: 8G
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['1']
+            capabilities: [gpu]
+    volumes:
+      - .:/src
+      - ${DATA:-.data}:/src/datasets/syncontact
+    command: nvidia-smi
