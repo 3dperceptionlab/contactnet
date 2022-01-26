@@ -15,4 +15,6 @@ services:
     volumes:
       - .:/src
       - ${DATA:-.data}:/src/datasets/syncontact
-    command: nvidia-smi
+    #stdin_open: true  # docker run -i
+    #tty: true         # docker run -t
+    command: tail -F anything
