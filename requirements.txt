@@ -1,3 +1,5 @@
 pytest==6.2.5
 pytorch-lightning==1.5.9
 lightning-bolts==0.5.0
+neptune-client==1.21.2
+jsonargparse[signatures]
